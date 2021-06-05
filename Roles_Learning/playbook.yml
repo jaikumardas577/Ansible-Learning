@@ -1,0 +1,8 @@
+---
+- name : running nginx playbook
+  hosts: all
+  remote_user: root
+  become: true
+  tags: Playbook Tags
+  roles:
+  - nginx_role

@@ -1,0 +1,5 @@
+---
+# vars file for nginx_role
+HTTP_PORT: 80
+REMOTE_USER : root
+OWNER : Jai

@@ -1,0 +1,128 @@
+    1  sudo poweroff
+    2  ifconfig
+    3  ansible
+    4  ansible all -i 192.168.56.103, -m ping
+    5  cat /etc/hosts
+    6  sudo vi /etc/hosts
+    7  ifconfig
+    8  ansible all -i 192.168.56.103, -m ping
+    9  ansible all -i 192.168.56.103, -m ping -a "name=centos password='centos'"
+   10  ansible all -i 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   11  ansible all 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   12  ansible all -i 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   13  ansible all -i 192.168.56.103,  --ask-pass --ask-sudo-pass
+   14  ansible all 192.168.56.103, -m ping --user=centos
+   15  ansible all -i 192.168.56.103, -m ping --user=centos
+   16  ansible all -i 192.168.56.103, -m ping --user=centos --extra-vars "ansible_sudo_pass=centos"
+   17  ansible all -i 192.168.56.103, -m ping --user=centos --extra-vars "ansible_sudo_pass='centos'"
+   18  ansible all -i 192.168.56.103, -m ping --user='centos' --extra-vars "ansible_sudo_pass='centos'"
+   19  cd ~/ansible
+   20  ls
+   21  mkdir ansible
+   22  cd ~/ansible
+   23  yum install nano
+   24  sudo yum install nano
+   25  nano inventory
+   26  cat inventory
+   27  nano inventory
+   28  ansible all -i inventory -m ping
+   29  nano inventory
+   30  cat inventory
+   31  ansible all -i inventory -m ping
+   32  cat inventory
+   33  nano inventory 
+   34  ansible all -i inventory -m ping
+   35  nano inventory 
+   36  ansible all -i inventory -m ping
+   37  nano inventory 
+   38  ansible all -i inventory -m ping
+   39  sudo yum install sshpass
+   40  ansible all -i inventory -m ping
+   41  nano inventory 
+   42  ansible all -i inventory -m ping
+   43  ls
+   44  history >> history.txt
+   45  ls
+   46  ansible all -i inventory -m copy -a "src=~/ansible/history.txt dest=~/history.txt"
+   47  ls
+   48  cat inventory
+   49  ansible all -i inventory -m setup
+   50  ansible all -i inventory -a "ls -la"
+   51  ansible all -i inventory -a "df -h"
+   52  sudo nano playbook.yml
+   53  vim
+   54  sudo nano playbook.yml
+   55  ansible all -i inventory playbook.yml 
+   56  ansible-playbook -i inventory playbook.yml 
+   57  sudo nano playbook.yml
+   58  ls
+   59  ls -la
+   60  chmod 777
+   61  chmod 777 playbook.yml 
+   62  sudo chmod 777 playbook.yml 
+   63  ls -la
+   64  sudo nano playbook.yml
+   65  ansible-playbook -i inventory playbook.yml 
+   66  cat playbook.yml 
+   67  ansible-playbook -i inventory playbook.yml 
+   68  cat playbook.yml 
+   69  ansible-playbook -i inventory playbook.yml 
+   70  yum sinatll nginx
+   71  yum install nginx
+   72  sudo yum install nginx
+   73  nano /etc/yum.repos.d/nginx.repo
+   74  sudo nano /etc/yum.repos.d/nginx.repo
+   75  history
+   76  ansible all -i inventory -m copy -a "src=/etc/yum.repos.d/nginx.repo dest=/etc/yum.repos.d/nginx.repo"
+   77  ansible-playbook -i inventory playbook.yml 
+   78  ansible all -i inventory -m copy -a "src=/etc/yum.repos.d/nginx.repo dest=/etc/yum.repos.d/nginx.repo" vvv
+   79  ansible all -i inventory -m copy -a "src=/etc/yum.repos.d/nginx.repo dest=/etc/yum.repos.d/nginx.repo" -vvv
+   80  ssh@192.168.56.102
+   81  ssh centos@192.168.56.102
+   82* ansible all -i inventory -m copy -a "src=~/ansible/history.txt dest=~/history.txt" 
+   83  ansible all -i inventory -m shell -a "whoami"
+   84  ansible all -i inventory -m shell -a "whoami" --become
+   85  ansible all -i inventory -m copy -a "src=/etc/yum.repos.d/nginx.repo dest=/etc/yum.repos.d/nginx.repo" --become
+   86  ansible-playbook -i inventory playbook.yml 
+   87  ansible-playbook -i inventory playbook.yml --listtags
+   88  ansible-playbook -i inventory playbook.yml --list-tags
+   89  ansible-playbook -i inventory playbook.yml 
+   90  pwd
+   91  cd ..
+   92  ls -la
+   93  cd ansible/
+   94  ls -la
+   95  ls /etc/
+   96  ls /etc/nginx/
+   97  ls
+   98  ls /etc/nginx/
+   99  ls /root/
+  100  sudo ls /root/
+  101  sudo nano /root/index.html
+  102  ansible-playbook -i inventory playbook.yml 
+  103  cat /root/index.html
+  104  sudo cat /root/index.html
+  105  ansible-playbook -i inventory playbook.yml 
+  106  nano index.html
+  107  pwd
+  108  ansible-playbook -i inventory playbook.yml 
+  109  curl 192.168.56.102
+  110  curl 192.168.56.103
+  111  curl 192.168.56.102
+  112  curl 192.168.56.103
+  113  ls
+  114  ansible-playbook -i inventory playbook.yml --list-tasks
+  115  git 
+  116  sudo yum install git
+  117  git
+  118  ls
+  119  echo "# Ansible-Learning" >> README.md
+  120  git init
+  121  git add README.md
+  122  git commit -m "first commit"
+  123  git branch -M main
+  124  git remote add origin https://github.com/jaikumardas577/Ansible-Learning.git
+  125  git push -u origin main
+  126  git status
+  127  git add inventory playbook.yml index.html history.txt 
+  128  history >> adhoc_command.txt

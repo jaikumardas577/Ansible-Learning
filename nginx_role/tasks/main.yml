@@ -1,0 +1,21 @@
+---
+# tasks file for nginx_role
+ - name : Nginx Install running by {{OWNER}}
+   yum :
+     name: nginx
+     state: latest
+   tags: nginx_service
+ - name : Copying configuration file
+   template:
+     src: index.html
+     dest: /usr/share/nginx/html
+   tags: Copying
+   notify :
+   - restart nginx
+ - name : Starting Nginx
+   service:
+     name: nginx
+     state: started
+     enabled: yes
+   tags: nginx_service
+
