@@ -1,0 +1,16 @@
+---
+- name             : delete Multiple Users in The targets
+  hosts            : all
+  become           : true
+  tags             : user_creation
+  tasks:
+    - user:
+        name       :  '{{ item.user}}'
+        password   :  '{{ item.password}}'
+        state      : absent
+        remove     : yes
+      with_items:
+      - {user: 'ragnar', password : 'ragnar'}
+      - {user: 'ubba', password : 'ubba'}
+...  
+  
