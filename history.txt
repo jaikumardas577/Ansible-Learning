@@ -1,0 +1,44 @@
+    1  sudo poweroff
+    2  ifconfig
+    3  ansible
+    4  ansible all -i 192.168.56.103, -m ping
+    5  cat /etc/hosts
+    6  sudo vi /etc/hosts
+    7  ifconfig
+    8  ansible all -i 192.168.56.103, -m ping
+    9  ansible all -i 192.168.56.103, -m ping -a "name=centos password='centos'"
+   10  ansible all -i 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   11  ansible all 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   12  ansible all -i 192.168.56.103, -m ping --ask-pass --ask-sudo-pass
+   13  ansible all -i 192.168.56.103,  --ask-pass --ask-sudo-pass
+   14  ansible all 192.168.56.103, -m ping --user=centos
+   15  ansible all -i 192.168.56.103, -m ping --user=centos
+   16  ansible all -i 192.168.56.103, -m ping --user=centos --extra-vars "ansible_sudo_pass=centos"
+   17  ansible all -i 192.168.56.103, -m ping --user=centos --extra-vars "ansible_sudo_pass='centos'"
+   18  ansible all -i 192.168.56.103, -m ping --user='centos' --extra-vars "ansible_sudo_pass='centos'"
+   19  cd ~/ansible
+   20  ls
+   21  mkdir ansible
+   22  cd ~/ansible
+   23  yum install nano
+   24  sudo yum install nano
+   25  nano inventory
+   26  cat inventory
+   27  nano inventory
+   28  ansible all -i inventory -m ping
+   29  nano inventory
+   30  cat inventory
+   31  ansible all -i inventory -m ping
+   32  cat inventory
+   33  nano inventory 
+   34  ansible all -i inventory -m ping
+   35  nano inventory 
+   36  ansible all -i inventory -m ping
+   37  nano inventory 
+   38  ansible all -i inventory -m ping
+   39  sudo yum install sshpass
+   40  ansible all -i inventory -m ping
+   41  nano inventory 
+   42  ansible all -i inventory -m ping
+   43  ls
+   44  history >> history.txt

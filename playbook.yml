@@ -1,0 +1,36 @@
+---
+- name : running nginx playbook
+  hosts: all
+  remote_user: root
+  become: true
+  tags: Playbook Tags
+  vars:
+    HTTP_PORT: 80 
+    REMOTE_USER : root
+
+  tasks: 
+  - name : Nginx Install
+    yum :
+      name: nginx
+      state: latest 
+    tags: nginx_service
+  - name : Copying configuration file
+    template:
+      src: /home/centos/ansible/index.html
+      dest: /usr/share/nginx/html
+    tags: Copying
+    notify :
+    - restart nginx
+  - name : Starting Nginx
+    service:
+      name: nginx
+      state: started
+      enabled: yes
+    tags: nginx_service
+  handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted
+    
+
